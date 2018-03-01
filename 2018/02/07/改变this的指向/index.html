@@ -7,17 +7,17 @@
   
   <title>改变函数内部的this指针的指向 | lwx_blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="##使用call()或者apply()，可以改变this的指向； 假设要改变fn函数内部的this的指向，指向obj，那么可以fn.call(obj);或者fn.apply(obj); ##call和apply的区别： call和apply的区别在于参数，他们两个的第一个参数都是一样的，表示调用该函数的对象； apply的第二个参数是数组，是[arg1,arg2,arg3]这种形式，而call是a">
+  <meta name="description" content="使用call()或者apply()，可以改变this的指向；假设要改变fn函数内部的this的指向，指向obj，那么可以fn.call(obj);或者fn.apply(obj); call和apply的区别：call和apply的区别在于参数，他们两个的第一个参数都是一样的，表示调用该函数的对象； apply的第二个参数是数组，是[arg1,arg2,arg3]这种形式，而call是arg1,ar">
 <meta property="og:type" content="article">
 <meta property="og:title" content="改变函数内部的this指针的指向">
 <meta property="og:url" content="http://liuwx.xyz/2018/02/07/改变this的指向/index.html">
 <meta property="og:site_name" content="lwx_blog">
-<meta property="og:description" content="##使用call()或者apply()，可以改变this的指向； 假设要改变fn函数内部的this的指向，指向obj，那么可以fn.call(obj);或者fn.apply(obj); ##call和apply的区别： call和apply的区别在于参数，他们两个的第一个参数都是一样的，表示调用该函数的对象； apply的第二个参数是数组，是[arg1,arg2,arg3]这种形式，而call是a">
+<meta property="og:description" content="使用call()或者apply()，可以改变this的指向；假设要改变fn函数内部的this的指向，指向obj，那么可以fn.call(obj);或者fn.apply(obj); call和apply的区别：call和apply的区别在于参数，他们两个的第一个参数都是一样的，表示调用该函数的对象； apply的第二个参数是数组，是[arg1,arg2,arg3]这种形式，而call是arg1,ar">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-01T11:37:53.797Z">
+<meta property="og:updated_time" content="2018-03-01T11:43:51.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="改变函数内部的this指针的指向">
-<meta name="twitter:description" content="##使用call()或者apply()，可以改变this的指向； 假设要改变fn函数内部的this的指向，指向obj，那么可以fn.call(obj);或者fn.apply(obj); ##call和apply的区别： call和apply的区别在于参数，他们两个的第一个参数都是一样的，表示调用该函数的对象； apply的第二个参数是数组，是[arg1,arg2,arg3]这种形式，而call是a">
+<meta name="twitter:description" content="使用call()或者apply()，可以改变this的指向；假设要改变fn函数内部的this的指向，指向obj，那么可以fn.call(obj);或者fn.apply(obj); call和apply的区别：call和apply的区别在于参数，他们两个的第一个参数都是一样的，表示调用该函数的对象； apply的第二个参数是数组，是[arg1,arg2,arg3]这种形式，而call是arg1,ar">
   
     <link rel="alternate" href="/atom.xml" title="lwx_blog" type="application/atom+xml">
   
@@ -90,19 +90,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##使用call()或者apply()，可以改变this的指向；</p>
-<p>假设要改变fn函数内部的this的指向，指向obj，那么可以fn.call(obj);或者fn.apply(obj);</p>
-<p>##call和apply的区别：</p>
-<p>call和apply的区别在于参数，他们两个的第一个参数都是一样的，表示调用该函数的对象；</p>
+        <h1 id="使用call-或者apply-，可以改变this的指向；"><a href="#使用call-或者apply-，可以改变this的指向；" class="headerlink" title="使用call()或者apply()，可以改变this的指向；"></a>使用call()或者apply()，可以改变this的指向；</h1><p>假设要改变fn函数内部的this的指向，指向obj，那么可以fn.call(obj);或者fn.apply(obj);</p>
+<h1 id="call和apply的区别："><a href="#call和apply的区别：" class="headerlink" title="call和apply的区别："></a>call和apply的区别：</h1><p>call和apply的区别在于参数，他们两个的第一个参数都是一样的，表示调用该函数的对象；</p>
 <p>apply的第二个参数是数组，是[arg1,arg2,arg3]这种形式，而call是arg1,arg2,arg3这样的形式。</p>
-<p>##另外还可以用bind函数：</p>
-<p>var bar=fn.bind(obj);</p>
+<h1 id="另外还可以用bind函数："><a href="#另外还可以用bind函数：" class="headerlink" title="另外还可以用bind函数："></a>另外还可以用bind函数：</h1><p>var bar=fn.bind(obj);</p>
 <p>那么fn中的this就指向obj对象了，bind函数返回新的函数，这个函数内的this指针指向obj对象。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://liuwx.xyz/2018/02/07/改变this的指向/" data-id="cje8fs0pc0001boi5z6afx999" class="article-share-link">Share</a>
+      <a data-url="http://liuwx.xyz/2018/02/07/改变this的指向/" data-id="cje8g4d9x0002p0i59qbmejg9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -111,15 +108,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2018/03/01/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/02/07/JS判断鼠标滚轮停止滚动/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Hello World
+          改变函数内部的this指针的指向
         
       </div>
     </a>
   
+  
+    <a href="/2018/02/01/hello-blog/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hello blog!</div>
+    </a>
   
 </nav>
 
@@ -142,7 +144,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
     </div>
   </div>
 
@@ -155,15 +157,15 @@
       <ul>
         
           <li>
-            <a href="/2018/03/01/hello-blog/">hello blog!</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/01/hello-world/">Hello World</a>
+            <a href="/2018/02/07/JS判断鼠标滚轮停止滚动/">改变函数内部的this指针的指向</a>
           </li>
         
           <li>
             <a href="/2018/02/07/改变this的指向/">改变函数内部的this指针的指向</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/01/hello-blog/">hello blog!</a>
           </li>
         
       </ul>
