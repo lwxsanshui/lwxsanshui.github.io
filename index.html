@@ -96,7 +96,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://liuwx.xyz/2018/03/01/hello-blog/" data-id="cje8e9xsh00003gi5z4kxgko9" class="article-share-link">Share</a>
+      <a data-url="http://liuwx.xyz/2018/03/01/hello-blog/" data-id="cje8fs0ow0000boi5659wz2ow" class="article-share-link">Share</a>
       
       
     </footer>
@@ -141,7 +141,51 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://liuwx.xyz/2018/03/01/hello-world/" data-id="cje8e9xsw00013gi53gxz2k15" class="article-share-link">Share</a>
+      <a data-url="http://liuwx.xyz/2018/03/01/hello-world/" data-id="cje8fs0pc0002boi5ljqbwlts" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-改变this的指向" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/02/07/改变this的指向/" class="article-date">
+  <time datetime="2018-02-07T10:43:52.000Z" itemprop="datePublished">2018-02-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/02/07/改变this的指向/">改变函数内部的this指针的指向</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##使用call()或者apply()，可以改变this的指向；</p>
+<p>假设要改变fn函数内部的this的指向，指向obj，那么可以fn.call(obj);或者fn.apply(obj);</p>
+<p>##call和apply的区别：</p>
+<p>call和apply的区别在于参数，他们两个的第一个参数都是一样的，表示调用该函数的对象；</p>
+<p>apply的第二个参数是数组，是[arg1,arg2,arg3]这种形式，而call是arg1,arg2,arg3这样的形式。</p>
+<p>##另外还可以用bind函数：</p>
+<p>var bar=fn.bind(obj);</p>
+<p>那么fn中的this就指向obj对象了，bind函数返回新的函数，这个函数内的this指针指向obj对象。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://liuwx.xyz/2018/02/07/改变this的指向/" data-id="cje8fs0pc0001boi5z6afx999" class="article-share-link">Share</a>
       
       
     </footer>
@@ -169,7 +213,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li></ul>
     </div>
   </div>
 
@@ -187,6 +231,10 @@
         
           <li>
             <a href="/2018/03/01/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2018/02/07/改变this的指向/">改变函数内部的this指针的指向</a>
           </li>
         
       </ul>
