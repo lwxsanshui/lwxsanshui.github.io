@@ -5,19 +5,19 @@
   
 
   
-  <title>JS判断鼠标滚轮停止滚动 | 前端笔记</title>
+  <title>改变函数内部的this指针的指向 | 前端笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="学习过程中碰到需要在滚轮滚动以及停止滚动时触发不同的事件，然后发现JS里监听的事件只有鼠标滚动事件； 然后想到的思路是设置一个计时器，200毫秒后执行滚轮停止事件，每次滚动重置计时器的时间，但是这样做的话会增加事件响应时间，因此在网上翻了很久，发现大家普遍都是这个思路，并没有看到更好的做法，只好按照这个想法做了。 var moveWheel1 = true;var moveWheel2 = fal">
+  <meta name="description" content="使用call()或者apply()，可以改变this的指向；假设要改变fn函数内部的this的指向，指向obj，那么可以fn.call(obj);或者fn.apply(obj); call和apply的区别：call和apply的区别在于参数，他们两个的第一个参数都是一样的，表示调用该函数的对象； apply的第二个参数是数组，是[arg1,arg2,arg3]这种形式，而call是arg1,ar">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS判断鼠标滚轮停止滚动">
-<meta property="og:url" content="http://liuwx.xyz/2018/02/07/JS判断鼠标滚轮停止滚动/index.html">
+<meta property="og:title" content="改变函数内部的this指针的指向">
+<meta property="og:url" content="http://liuwx.xyz/2018/02/07/2048小游戏/index.html">
 <meta property="og:site_name" content="前端笔记">
-<meta property="og:description" content="学习过程中碰到需要在滚轮滚动以及停止滚动时触发不同的事件，然后发现JS里监听的事件只有鼠标滚动事件； 然后想到的思路是设置一个计时器，200毫秒后执行滚轮停止事件，每次滚动重置计时器的时间，但是这样做的话会增加事件响应时间，因此在网上翻了很久，发现大家普遍都是这个思路，并没有看到更好的做法，只好按照这个想法做了。 var moveWheel1 = true;var moveWheel2 = fal">
+<meta property="og:description" content="使用call()或者apply()，可以改变this的指向；假设要改变fn函数内部的this的指向，指向obj，那么可以fn.call(obj);或者fn.apply(obj); call和apply的区别：call和apply的区别在于参数，他们两个的第一个参数都是一样的，表示调用该函数的对象； apply的第二个参数是数组，是[arg1,arg2,arg3]这种形式，而call是arg1,ar">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-03-01T11:49:25.974Z">
+<meta property="og:updated_time" content="2018-03-01T11:43:51.933Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS判断鼠标滚轮停止滚动">
-<meta name="twitter:description" content="学习过程中碰到需要在滚轮滚动以及停止滚动时触发不同的事件，然后发现JS里监听的事件只有鼠标滚动事件； 然后想到的思路是设置一个计时器，200毫秒后执行滚轮停止事件，每次滚动重置计时器的时间，但是这样做的话会增加事件响应时间，因此在网上翻了很久，发现大家普遍都是这个思路，并没有看到更好的做法，只好按照这个想法做了。 var moveWheel1 = true;var moveWheel2 = fal">
+<meta name="twitter:title" content="改变函数内部的this指针的指向">
+<meta name="twitter:description" content="使用call()或者apply()，可以改变this的指向；假设要改变fn函数内部的this的指向，指向obj，那么可以fn.call(obj);或者fn.apply(obj); call和apply的区别：call和apply的区别在于参数，他们两个的第一个参数都是一样的，表示调用该函数的对象； apply的第二个参数是数组，是[arg1,arg2,arg3]这种形式，而call是arg1,ar">
   
     <link rel="alternate" href="/atom.xml" title="前端笔记" type="application/atom+xml">
   
@@ -68,10 +68,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-JS判断鼠标滚轮停止滚动" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2048小游戏" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/02/07/JS判断鼠标滚轮停止滚动/" class="article-date">
-  <time datetime="2018-02-07T11:56:51.000Z" itemprop="datePublished">2018-02-07</time>
+    <a href="/2018/02/07/2048小游戏/" class="article-date">
+  <time datetime="2018-02-07T10:43:52.000Z" itemprop="datePublished">2018-02-07</time>
 </a>
     
   </div>
@@ -82,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JS判断鼠标滚轮停止滚动
+      改变函数内部的this指针的指向
     </h1>
   
 
@@ -90,14 +90,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>学习过程中碰到需要在滚轮滚动以及停止滚动时触发不同的事件，然后发现JS里监听的事件只有鼠标滚动事件；</p>
-<p>然后想到的思路是设置一个计时器，200毫秒后执行滚轮停止事件，每次滚动重置计时器的时间，但是这样做的话会增加事件响应时间，因此在网上翻了很久，发现大家普遍都是这个思路，并没有看到更好的做法，只好按照这个想法做了。</p>
-<p><code>var moveWheel1 = true;</code><br><code>var moveWheel2 = false;</code><br><code>var wheelClock;</code><br><code>function stopWheel(){</code><br><code>if(moveWheel2 == true){</code><br><code>console.log(&quot;滚轮停止了&quot;);</code><br><code>moveWheel2 = false;</code><br><code>moveWheel1 = true;</code><br><code>//这里写停止时调用的方法</code><br><code>}</code><br><code>}</code><br><code>function moveWheel(){</code><br><code>if(moveWheel1==true){</code><br><code>console.log(&quot;滚动了&quot;);</code><br><code>moveWheel1 = false;</code><br><code>moveWheel2 = true;</code><br><code>//这里写开始滚动时调用的方法</code><br><code>wheelClock = setTimeout(stopWheel,200);</code><br><code>}</code><br><code>else {</code><br><code>clearTimeout(wheelClock);</code><br><code>wheelClock = setTimeout(stopWheel,150);</code><br><code>}</code><br><code>}</code></p>
+        <h1 id="使用call-或者apply-，可以改变this的指向；"><a href="#使用call-或者apply-，可以改变this的指向；" class="headerlink" title="使用call()或者apply()，可以改变this的指向；"></a>使用call()或者apply()，可以改变this的指向；</h1><p>假设要改变fn函数内部的this的指向，指向obj，那么可以fn.call(obj);或者fn.apply(obj);</p>
+<h1 id="call和apply的区别："><a href="#call和apply的区别：" class="headerlink" title="call和apply的区别："></a>call和apply的区别：</h1><p>call和apply的区别在于参数，他们两个的第一个参数都是一样的，表示调用该函数的对象；</p>
+<p>apply的第二个参数是数组，是[arg1,arg2,arg3]这种形式，而call是arg1,arg2,arg3这样的形式。</p>
+<h1 id="另外还可以用bind函数："><a href="#另外还可以用bind函数：" class="headerlink" title="另外还可以用bind函数："></a>另外还可以用bind函数：</h1><p>var bar=fn.bind(obj);</p>
+<p>那么fn中的this就指向obj对象了，bind函数返回新的函数，这个函数内的this指针指向obj对象。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://liuwx.xyz/2018/02/07/JS判断鼠标滚轮停止滚动/" data-id="cje9xcckh00017ci5amjdx3hn" class="article-share-link">Share</a>
+      <a data-url="http://liuwx.xyz/2018/02/07/2048小游戏/" data-id="cje9xcckc00007ci5rzfyvye2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -106,8 +108,17 @@
     
 <nav id="article-nav">
   
+    <a href="/2018/02/07/JS判断鼠标滚轮停止滚动/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JS判断鼠标滚轮停止滚动
+        
+      </div>
+    </a>
   
-    <a href="/2018/02/07/2048小游戏/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2018/02/07/改变this的指向/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">改变函数内部的this指针的指向</div>
     </a>
